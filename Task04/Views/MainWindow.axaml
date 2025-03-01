@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Task04.Views.MainWindow"
+        xmlns:vm="using:Task04.ViewModels"
+        Title="MainWindow">
+    <Design.DataContext>
+        <vm:MainViewModel />
+    </Design.DataContext>
+    <StackPanel Orientation="Horizontal" Spacing="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button Command="{Binding OpenReflectionWindow}">Открыть окно рефлексии</Button>
+        <StackPanel Orientation="Vertical" Spacing="10" HorizontalAlignment="Center">
+            <TextBlock Text="Светильник" />
+            <Button Content="Включить" Command="{Binding LanternTurnOn}" />
+            <Button Content="Выключить" Command="{Binding LanternTurnOff}" />
+            <Button Content="Сломать" Command="{Binding LanternBreak}" />
+            <TextBlock Text="{Binding LanternIsOn, StringFormat='Включено: {0}'}" />
+            <TextBlock Text="{Binding LanternBroken, StringFormat='Сломано: {0}'}" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Spacing="10" HorizontalAlignment="Center">
+            <TextBlock Text="Канделябр" />
+            <Button Content="Включить" Command="{Binding ChandelierTurnOn}" />
+            <Button Content="Выключить" Command="{Binding ChandelierTurnOff}" />
+            <Button Content="Сломать" Command="{Binding ChandelierBreak}" />
+            <TextBlock Text="{Binding ChandelierIsOn, StringFormat='Включено: {0}'}" />
+            <TextBlock Text="{Binding ChandelierBroken, StringFormat='Сломано: {0}'}" />
+            <TextBlock Text="{Binding ChandelierMode, StringFormat='Режим: {0}'}" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Spacing="10" HorizontalAlignment="Center">
+            <TextBlock Text="Настольная лампа" />
+            <Button Content="Включить" Command="{Binding DeskLampTurnOn}" />
+            <Button Content="Выключить" Command="{Binding DeskLampTurnOff}" />
+            <Button Content="Сломать" Command="{Binding DeskLampBreak}" />
+            <Button Content="Включить в розетку" Command="{Binding DeskLampPlugIn}" />
+            <Button Content="Выключить из розетки" Command="{Binding DeskLampUnplug}" />
+            <TextBlock Text="{Binding DeskLampIsOn, StringFormat='Включено: {0}'}" />
+            <TextBlock Text="{Binding DeskLampBroken, StringFormat='Сломано: {0}'}" />
+            <TextBlock Text="{Binding DeskLampPluggedIn, StringFormat='Включено в розетку: {0}'}" />
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Spacing="10" HorizontalAlignment="Center">
+            <TextBlock Text="Напольный светильник" />
+            <Button Content="Включить" Command="{Binding FloorLampTurnOn}" />
+            <Button Content="Выключить" Command="{Binding FloorLampTurnOff}" />
+            <Button Content="Сломать" Command="{Binding FloorLampBreak}" />
+            <Button Content="Включить в розетку" Command="{Binding FloorLampPlugIn}" />
+            <Button Content="Выключить из розетки" Command="{Binding FloorLampUnplug}" />
+            <TextBlock Text="{Binding FloorLampIsOn, StringFormat='Включено: {0}'}" />
+            <TextBlock Text="{Binding FloorLampBroken, StringFormat='Сломано: {0}'}" />
+            <TextBlock Text="{Binding FloorLampPluggedIn, StringFormat='Включено в розетку: {0}'}" />
+        </StackPanel>
+    </StackPanel>
+    
+</Window>

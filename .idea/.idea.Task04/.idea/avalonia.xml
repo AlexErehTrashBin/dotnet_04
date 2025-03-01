@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Task04/App.axaml" value="Task04/Task04.csproj" />
+        <entry key="Task04/Views/MainWindow.axaml" value="Task04/Task04.csproj" />
+        <entry key="Task04/Views/ReflectionWindow.axaml" value="Task04/Task04.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

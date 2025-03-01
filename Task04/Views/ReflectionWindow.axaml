@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Task04.Views.ReflectionWindow"
+        xmlns:vm="using:Task04.ViewModels"
+        Title="Reflection Window">
+    <Design.DataContext>
+        <vm:ReflectionViewModel />
+    </Design.DataContext>
+    <StackPanel Orientation="Vertical" Spacing="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox x:Name="PathTextBox" Width="300" IsReadOnly="False" />
+        <Button Content="Загрузить библиотеку" Command="{Binding LoadAssemblyCommand}" CommandParameter="{Binding ElementName=PathTextBox, Path=Text}" />
+        <ComboBox x:Name="ClassesComboBox" ItemsSource="{Binding Classes}" SelectedItem="{Binding SelectedClassName}" SelectionChanged="OnSelectClass" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Загрузить методы" Command="{Binding LoadMethodsCommand}" CommandParameter="{Binding ElementName=ClassesComboBox, Path=SelectedItem.Name}" />
+        <ComboBox ItemsSource="{Binding SelectedClassMethods}"  SelectedItem="{Binding SelectedMethodName}" SelectionChanged="OnSelectMethod">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Выполнить метод" Command="{Binding ExecuteMethodCommand}" />
+    </StackPanel>
+</Window>
